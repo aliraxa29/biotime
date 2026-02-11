@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_transaction",
+  "emp_code",
+  "employee_name",
+  "punch_time",
+  "punch_state",
+  "cb_transaction",
+  "biotime_transaction_id",
+  "erpnext_employee",
+  "log_type",
+  "checkin_created",
+  "sb_device_info",
+  "device_sn",
+  "device_alias",
+  "area_alias",
+  "cb_device_detail",
+  "verify_type",
+  "source",
+  "purpose",
+  "sb_location",
+  "latitude",
+  "longitude",
+  "gps_location",
+  "cb_location",
+  "mobile",
+  "is_attendance",
+  "sb_sync",
+  "upload_time",
+  "sync_status",
+  "sync_time",
+  "employee_checkin",
+  "cb_sync",
+  "work_code",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_transaction",
+   "fieldtype": "Section Break",
+   "label": "Transaction Details"
+  },
+  {
+   "fieldname": "emp_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Code",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "punch_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Punch Time",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "description": "0=Check In, 1=Check Out, 2=Break Out, 3=Break In, 4=OT In, 5=OT Out",
+   "fieldname": "punch_state",
+   "fieldtype": "Data",
+   "label": "Punch State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_transaction",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "biotime_transaction_id",
+   "fieldtype": "Int",
+   "label": "BioTime Transaction ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "erpnext_employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "ERPNext Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "description": "Mapped from punch_state for Employee Checkin",
+   "fieldname": "log_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Log Type",
+   "options": "\nIN\nOUT",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Whether Employee Checkin has been created for this transaction",
+   "fieldname": "checkin_created",
+   "fieldtype": "Check",
+   "label": "Checkin Created",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_device_info",
+   "fieldtype": "Section Break",
+   "label": "Device Info"
+  },
+  {
+   "fieldname": "device_sn",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Device Serial Number",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "device_alias",
+   "fieldtype": "Data",
+   "label": "Device Alias",
+   "read_only": 1
+  },
+  {
+   "fieldname": "area_alias",
+   "fieldtype": "Data",
+   "label": "Area Alias",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_device_detail",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "1=FP, 4=Card, 15=Face",
+   "fieldname": "verify_type",
+   "fieldtype": "Int",
+   "label": "Verify Type",
+   "read_only": 1
+  },
+  {
+   "description": "0=Device, 1=Mobile, 2=Manual",
+   "fieldname": "source",
+   "fieldtype": "Int",
+   "label": "Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Int",
+   "label": "Purpose",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_location",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "7",
+   "read_only": 1
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "7",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gps_location",
+   "fieldtype": "Data",
+   "label": "GPS Location",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_location",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_attendance",
+   "fieldtype": "Check",
+   "label": "Is Attendance",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_sync",
+   "fieldtype": "Section Break",
+   "label": "Sync Status"
+  },
+  {
+   "fieldname": "upload_time",
+   "fieldtype": "Datetime",
+   "label": "Upload Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_status",
+   "fieldtype": "Int",
+   "label": "BioTime Sync Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_time",
+   "fieldtype": "Datetime",
+   "label": "Sync Time",
+   "read_only": 1
+  },
+  {
+   "description": "Link to created Employee Checkin record",
+   "fieldname": "employee_checkin",
+   "fieldtype": "Link",
+   "label": "Employee Checkin",
+   "options": "Employee Checkin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_sync",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_code",
+   "fieldtype": "Data",
+   "label": "Work Code",
+   "read_only": 1
+  },
+  {
+   "description": "Error details if checkin creation failed",
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error Message",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "links": [],
+ "modified": "2026-02-11 16:23:31.711106",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime Transaction Log",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "punch_time",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "emp_code"
+}

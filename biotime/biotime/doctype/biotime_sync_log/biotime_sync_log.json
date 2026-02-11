@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_sync_info",
+  "sync_type",
+  "status",
+  "started_at",
+  "cb_sync_info",
+  "completed_at",
+  "duration_seconds",
+  "triggered_by",
+  "sb_results",
+  "total_records",
+  "records_created",
+  "records_updated",
+  "cb_results",
+  "records_failed",
+  "checkins_created",
+  "sb_details",
+  "log_details",
+  "error_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_sync_info",
+   "fieldtype": "Section Break",
+   "label": "Sync Information"
+  },
+  {
+   "fieldname": "sync_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sync Type",
+   "options": "Full Sync\nTransactions\nDevices\nEmployees\nDepartments\nAreas\nPositions",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Queued",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Queued\nIn Progress\nCompleted\nFailed\nPartially Failed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_sync_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Datetime",
+   "label": "Completed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "duration_seconds",
+   "fieldtype": "Float",
+   "label": "Duration (seconds)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "triggered_by",
+   "fieldtype": "Link",
+   "label": "Triggered By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_results",
+   "fieldtype": "Section Break",
+   "label": "Results"
+  },
+  {
+   "fieldname": "total_records",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Records from BioTime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "records_created",
+   "fieldtype": "Int",
+   "label": "Records Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "records_updated",
+   "fieldtype": "Int",
+   "label": "Records Updated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_results",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "records_failed",
+   "fieldtype": "Int",
+   "label": "Records Failed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "checkins_created",
+   "fieldtype": "Int",
+   "label": "Employee Checkins Created",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "log_details",
+   "fieldtype": "Long Text",
+   "label": "Log Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Long Text",
+   "label": "Error Log",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-02-11 16:19:45.894126",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime Sync Log",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

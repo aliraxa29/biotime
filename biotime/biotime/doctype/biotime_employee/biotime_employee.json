@@ -1,0 +1,384 @@
+{
+ "actions": [],
+ "autoname": "field:emp_code",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_employee_info",
+  "emp_code",
+  "first_name",
+  "last_name",
+  "nickname",
+  "cb_employee_info",
+  "biotime_employee_id",
+  "erpnext_employee",
+  "erpnext_employee_name",
+  "mapped",
+  "sb_work_info",
+  "department",
+  "department_name",
+  "position",
+  "position_name",
+  "cb_work_info",
+  "hire_date",
+  "gender",
+  "birthday",
+  "emp_type",
+  "sb_device_info",
+  "card_no",
+  "device_password",
+  "verify_mode",
+  "dev_privilege",
+  "cb_device_info",
+  "enroll_sn",
+  "enable_att",
+  "enable_overtime",
+  "enable_holiday",
+  "sb_contact",
+  "email",
+  "mobile",
+  "contact_tel",
+  "office_tel",
+  "cb_contact",
+  "national",
+  "city",
+  "address",
+  "postcode",
+  "sb_other",
+  "ssn",
+  "religion",
+  "app_status",
+  "app_role",
+  "cb_other",
+  "area",
+  "area_name",
+  "last_sync"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_employee_info",
+   "fieldtype": "Section Break",
+   "label": "Employee Information"
+  },
+  {
+   "description": "BioTime employee code / badge ID",
+   "fieldname": "emp_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "nickname",
+   "fieldtype": "Data",
+   "label": "Nickname"
+  },
+  {
+   "fieldname": "cb_employee_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Internal ID from BioTime",
+   "fieldname": "biotime_employee_id",
+   "fieldtype": "Int",
+   "label": "BioTime Employee ID",
+   "read_only": 1
+  },
+  {
+   "description": "Linked ERPNext Employee record",
+   "fieldname": "erpnext_employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "ERPNext Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "erpnext_employee.employee_name",
+   "fieldname": "erpnext_employee_name",
+   "fieldtype": "Data",
+   "label": "ERPNext Employee Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Whether this BioTime employee is linked to an ERPNext employee",
+   "fieldname": "mapped",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mapped to ERPNext",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_work_info",
+   "fieldtype": "Section Break",
+   "label": "Work Information"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "BioTime Department"
+  },
+  {
+   "fetch_from": "department.dept_name",
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "label": "Department Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Link",
+   "label": "Position",
+   "options": "BioTime Position"
+  },
+  {
+   "fetch_from": "position.position_name",
+   "fieldname": "position_name",
+   "fieldtype": "Data",
+   "label": "Position Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_work_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hire_date",
+   "fieldtype": "Date",
+   "label": "Hire Date"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "birthday",
+   "fieldtype": "Date",
+   "label": "Birthday"
+  },
+  {
+   "fieldname": "emp_type",
+   "fieldtype": "Data",
+   "label": "Employee Type"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_device_info",
+   "fieldtype": "Section Break",
+   "label": "Device / Biometric Info"
+  },
+  {
+   "description": "RFID card number",
+   "fieldname": "card_no",
+   "fieldtype": "Data",
+   "label": "Card Number"
+  },
+  {
+   "fieldname": "device_password",
+   "fieldtype": "Data",
+   "label": "Device Password"
+  },
+  {
+   "description": "-1 = auto, others device specific",
+   "fieldname": "verify_mode",
+   "fieldtype": "Int",
+   "label": "Verify Mode"
+  },
+  {
+   "description": "0=User, 1=Enroller, 2=Admin, 14=SuperAdmin",
+   "fieldname": "dev_privilege",
+   "fieldtype": "Int",
+   "label": "Device Privilege"
+  },
+  {
+   "fieldname": "cb_device_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enroll_sn",
+   "fieldtype": "Data",
+   "label": "Enrollment SN"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_att",
+   "fieldtype": "Check",
+   "label": "Enable Attendance"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_overtime",
+   "fieldtype": "Check",
+   "label": "Enable Overtime"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_holiday",
+   "fieldtype": "Check",
+   "label": "Enable Holiday"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "contact_tel",
+   "fieldtype": "Data",
+   "label": "Contact Telephone"
+  },
+  {
+   "fieldname": "office_tel",
+   "fieldtype": "Data",
+   "label": "Office Telephone"
+  },
+  {
+   "fieldname": "cb_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "national",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "postcode",
+   "fieldtype": "Data",
+   "label": "Postcode"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_other",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "ssn",
+   "fieldtype": "Data",
+   "label": "SSN / National ID"
+  },
+  {
+   "fieldname": "religion",
+   "fieldtype": "Data",
+   "label": "Religion"
+  },
+  {
+   "fieldname": "app_status",
+   "fieldtype": "Int",
+   "label": "App Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "app_role",
+   "fieldtype": "Data",
+   "label": "App Role",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_other",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Link",
+   "label": "Area",
+   "options": "BioTime Area"
+  },
+  {
+   "fetch_from": "area.area_name",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "label": "Area Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sync",
+   "fieldtype": "Datetime",
+   "label": "Last Synced",
+   "read_only": 1
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Employee",
+   "link_fieldname": "attendance_device_id"
+  },
+  {
+   "link_doctype": "BioTime Transaction Log",
+   "link_fieldname": "emp_code"
+  }
+ ],
+ "modified": "2026-02-11 17:45:59.176602",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime Employee",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "first_name",
+ "track_changes": 1
+}

@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "connection_section",
+  "server_url",
+  "username",
+  "cb_conn_1",
+  "password",
+  "auth_token_type",
+  "auth_token",
+  "connection_status",
+  "sync_section",
+  "enable_auto_sync",
+  "sync_interval_minutes",
+  "cb_sync_1",
+  "last_sync_time",
+  "last_transaction_sync",
+  "sync_days_back",
+  "data_sync_section",
+  "pull_devices",
+  "pull_employees",
+  "cb_data_1",
+  "pull_departments",
+  "pull_areas",
+  "pull_positions",
+  "checkin_section",
+  "create_employee_checkin",
+  "default_log_type",
+  "cb_checkin_1",
+  "employee_id_field",
+  "auto_map_employees",
+  "employee_management_section",
+  "block_new_registrations",
+  "cb_emp_1",
+  "log_retention_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "connection_section",
+   "fieldtype": "Section Break",
+   "label": "BioTime Connection"
+  },
+  {
+   "default": "http://biotime.itag.com.sa:70/",
+   "description": "Full URL including port, e.g. http://biotime.example.com:70/",
+   "fieldname": "server_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "BioTime Server URL",
+   "reqd": 1
+  },
+  {
+   "default": "admin",
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_conn_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "default": "JWT",
+   "description": "JWT uses 'JWT {token}' header. General uses 'Token {token}' header.",
+   "fieldname": "auth_token_type",
+   "fieldtype": "Select",
+   "label": "Auth Token Type",
+   "options": "JWT\nGeneral"
+  },
+  {
+   "fieldname": "auth_token",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Auth Token (auto-generated)",
+   "read_only": 1
+  },
+  {
+   "description": "Last connection test result",
+   "fieldname": "connection_status",
+   "fieldtype": "Data",
+   "label": "Connection Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_section",
+   "fieldtype": "Section Break",
+   "label": "Sync Configuration"
+  },
+  {
+   "default": "0",
+   "description": "Automatically sync transactions on schedule",
+   "fieldname": "enable_auto_sync",
+   "fieldtype": "Check",
+   "label": "Enable Auto Sync"
+  },
+  {
+   "default": "15",
+   "description": "Minimum minutes between syncs. Scheduler checks every 5 min.",
+   "fieldname": "sync_interval_minutes",
+   "fieldtype": "Int",
+   "label": "Sync Interval (minutes)"
+  },
+  {
+   "fieldname": "cb_sync_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_sync_time",
+   "fieldtype": "Datetime",
+   "label": "Last Sync Time",
+   "read_only": 1
+  },
+  {
+   "description": "Timestamp of last successfully synced transaction",
+   "fieldname": "last_transaction_sync",
+   "fieldtype": "Datetime",
+   "label": "Last Transaction Sync",
+   "read_only": 1
+  },
+  {
+   "default": "7",
+   "description": "On first sync, pull transactions from this many days ago",
+   "fieldname": "sync_days_back",
+   "fieldtype": "Int",
+   "label": "Sync Days Back (first sync)"
+  },
+  {
+   "fieldname": "data_sync_section",
+   "fieldtype": "Section Break",
+   "label": "Data to Sync"
+  },
+  {
+   "default": "1",
+   "fieldname": "pull_devices",
+   "fieldtype": "Check",
+   "label": "Sync Devices"
+  },
+  {
+   "default": "1",
+   "fieldname": "pull_employees",
+   "fieldtype": "Check",
+   "label": "Sync Employees"
+  },
+  {
+   "fieldname": "cb_data_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "pull_departments",
+   "fieldtype": "Check",
+   "label": "Sync Departments"
+  },
+  {
+   "default": "0",
+   "fieldname": "pull_areas",
+   "fieldtype": "Check",
+   "label": "Sync Areas"
+  },
+  {
+   "default": "0",
+   "fieldname": "pull_positions",
+   "fieldtype": "Check",
+   "label": "Sync Positions"
+  },
+  {
+   "fieldname": "checkin_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Checkin Settings"
+  },
+  {
+   "default": "1",
+   "description": "Automatically create Employee Checkin records from transaction logs",
+   "fieldname": "create_employee_checkin",
+   "fieldtype": "Check",
+   "label": "Auto-Create Employee Checkin"
+  },
+  {
+   "description": "Used when punch_state cannot determine IN/OUT",
+   "fieldname": "default_log_type",
+   "fieldtype": "Select",
+   "label": "Default Log Type",
+   "options": "\nIN\nOUT"
+  },
+  {
+   "fieldname": "cb_checkin_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Attendance Device ID",
+   "description": "BioTime emp_code is matched against this ERPNext Employee field",
+   "fieldname": "employee_id_field",
+   "fieldtype": "Select",
+   "label": "Employee ID Matching Field",
+   "options": "Attendance Device ID\nEmployee ID\nEmployee Name"
+  },
+  {
+   "default": "1",
+   "description": "Automatically try to map BioTime employees to ERPNext employees",
+   "fieldname": "auto_map_employees",
+   "fieldtype": "Check",
+   "label": "Auto-Map Employees on Sync"
+  },
+  {
+   "fieldname": "employee_management_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Management"
+  },
+  {
+   "default": "0",
+   "description": "Prevent new employee self-registrations on BioTime devices",
+   "fieldname": "block_new_registrations",
+   "fieldtype": "Check",
+   "label": "Block New Registrations on Devices"
+  },
+  {
+   "fieldname": "cb_emp_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "90",
+   "description": "Auto-delete transaction logs older than this many days. 0 = keep forever.",
+   "fieldname": "log_retention_days",
+   "fieldtype": "Int",
+   "label": "Log Retention (days)"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-11 15:36:26.426968",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

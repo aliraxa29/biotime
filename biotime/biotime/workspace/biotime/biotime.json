@@ -1,0 +1,229 @@
+{
+ "charts": [
+  {
+   "chart_name": "BioTime Checkins This Month",
+   "label": "Checkins This Month"
+  },
+  {
+   "chart_name": "BioTime Sync Activity",
+   "label": "Sync Activity"
+  }
+ ],
+ "content": "[{\"id\":\"bio_nc_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Overview</b></span>\",\"col\":12}},{\"id\":\"bio_nc_devices\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total BioTime Devices\",\"col\":3}},{\"id\":\"bio_nc_employees\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Mapped BioTime Employees\",\"col\":3}},{\"id\":\"bio_nc_unmapped\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Unmapped BioTime Employees\",\"col\":3}},{\"id\":\"bio_nc_today\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Transactions\",\"col\":3}},{\"id\":\"bio_spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bio_chart_1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"BioTime Checkins This Month\",\"col\":12}},{\"id\":\"bio_spacer_2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bio_chart_2\",\"type\":\"chart\",\"data\":{\"chart_name\":\"BioTime Sync Activity\",\"col\":12}},{\"id\":\"bio_spacer_3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bio_sc_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"bio_sc_settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BioTime Settings\",\"col\":3}},{\"id\":\"bio_sc_devices\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BioTime Device\",\"col\":3}},{\"id\":\"bio_sc_employees\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BioTime Employee\",\"col\":3}},{\"id\":\"bio_sc_transactions\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BioTime Transaction Log\",\"col\":3}},{\"id\":\"bio_sc_synclog\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BioTime Sync Log\",\"col\":3}},{\"id\":\"bio_sc_checkins\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Checkin\",\"col\":3}},{\"id\":\"bio_spacer_4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bio_card_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Configuration</b></span>\",\"col\":12}},{\"id\":\"bio_card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}},{\"id\":\"bio_card_devices\",\"type\":\"card\",\"data\":{\"card_name\":\"Devices & Attendance\",\"col\":4}},{\"id\":\"bio_card_masters\",\"type\":\"card\",\"data\":{\"card_name\":\"BioTime Masters\",\"col\":4}}]",
+ "creation": "2026-02-11 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "BioTime",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "description": "Server connection, sync schedule, employee mapping configuration",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Settings",
+   "link_count": 0,
+   "link_to": "BioTime Settings",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "description": "History of all sync operations",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Sync Log",
+   "link_count": 0,
+   "link_to": "BioTime Sync Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Devices & Attendance",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "description": "Attendance terminals and machines",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Device",
+   "link_count": 0,
+   "link_to": "BioTime Device",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "description": "Punch-in/out records from devices",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Transaction Log",
+   "link_count": 0,
+   "link_to": "BioTime Transaction Log",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "description": "ERPNext checkin records created from BioTime",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Checkin",
+   "link_count": 0,
+   "link_to": "Employee Checkin",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Masters",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "description": "Employees synced from BioTime with ERPNext mapping",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Employee",
+   "link_count": 0,
+   "link_to": "BioTime Employee",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "description": "Department hierarchy from BioTime",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Department",
+   "link_count": 0,
+   "link_to": "BioTime Department",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Location areas from BioTime",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Area",
+   "link_count": 0,
+   "link_to": "BioTime Area",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Job positions from BioTime",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "BioTime Position",
+   "link_count": 0,
+   "link_to": "BioTime Position",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-11 15:59:01.610574",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime",
+ "number_cards": [
+  {
+   "label": "Total BioTime Devices",
+   "number_card_name": "Total BioTime Devices"
+  },
+  {
+   "label": "Mapped BioTime Employees",
+   "number_card_name": "Mapped BioTime Employees"
+  },
+  {
+   "label": "Unmapped BioTime Employees",
+   "number_card_name": "Unmapped BioTime Employees"
+  },
+  {
+   "label": "Today Transactions",
+   "number_card_name": "Today Transactions"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 25.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "BioTime Settings",
+   "link_to": "BioTime Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} Online",
+   "label": "BioTime Device",
+   "link_to": "BioTime Device",
+   "stats_filter": "{\"status\":\"Online\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "format": "{} Mapped",
+   "label": "BioTime Employee",
+   "link_to": "BioTime Employee",
+   "stats_filter": "{\"mapped\":1}",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "BioTime Transaction Log",
+   "link_to": "BioTime Transaction Log",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "{} Failed",
+   "label": "BioTime Sync Log",
+   "link_to": "BioTime Sync Log",
+   "stats_filter": "{\"status\":\"Failed\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Employee Checkin",
+   "link_to": "Employee Checkin",
+   "type": "DocType"
+  }
+ ],
+ "title": "BioTime"
+}

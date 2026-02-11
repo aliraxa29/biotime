@@ -1,0 +1,275 @@
+{
+ "actions": [],
+ "autoname": "field:serial_number",
+ "creation": "2025-01-01 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_device_info",
+  "serial_number",
+  "alias",
+  "terminal_name",
+  "ip_address",
+  "cb_device_info",
+  "biotime_device_id",
+  "status",
+  "is_attendance",
+  "sb_area",
+  "area",
+  "area_name",
+  "cb_area",
+  "last_activity",
+  "sb_firmware",
+  "firmware_version",
+  "push_version",
+  "cb_firmware",
+  "timezone",
+  "transfer_time",
+  "transfer_interval",
+  "sb_counts",
+  "user_count",
+  "fp_count",
+  "face_count",
+  "cb_counts",
+  "palm_count",
+  "transaction_count",
+  "sb_sync_info",
+  "push_time",
+  "last_sync",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_device_info",
+   "fieldtype": "Section Break",
+   "label": "Device Information"
+  },
+  {
+   "description": "Device serial number (SN)",
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Serial Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Friendly name for the device",
+   "fieldname": "alias",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device Alias"
+  },
+  {
+   "fieldname": "terminal_name",
+   "fieldtype": "Data",
+   "label": "Terminal Name"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "cb_device_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Internal ID from BioTime",
+   "fieldname": "biotime_device_id",
+   "fieldtype": "Int",
+   "label": "BioTime Device ID",
+   "read_only": 1
+  },
+  {
+   "default": "Unknown",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Online\nOffline\nUnknown",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_attendance",
+   "fieldtype": "Check",
+   "label": "Is Attendance Device"
+  },
+  {
+   "fieldname": "sb_area",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Link",
+   "label": "Area",
+   "options": "BioTime Area"
+  },
+  {
+   "fetch_from": "area.area_name",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "label": "Area Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_area",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_activity",
+   "fieldtype": "Datetime",
+   "label": "Last Activity",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_firmware",
+   "fieldtype": "Section Break",
+   "label": "Firmware & Config"
+  },
+  {
+   "fieldname": "firmware_version",
+   "fieldtype": "Data",
+   "label": "Firmware Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "push_version",
+   "fieldtype": "Data",
+   "label": "Push Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_firmware",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Timezone offset in hours",
+   "fieldname": "timezone",
+   "fieldtype": "Int",
+   "label": "Timezone Offset"
+  },
+  {
+   "description": "Scheduled transfer times e.g. 00:00;14:05",
+   "fieldname": "transfer_time",
+   "fieldtype": "Data",
+   "label": "Transfer Time"
+  },
+  {
+   "description": "Data transfer interval in minutes",
+   "fieldname": "transfer_interval",
+   "fieldtype": "Int",
+   "label": "Transfer Interval (min)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_counts",
+   "fieldtype": "Section Break",
+   "label": "Device Statistics"
+  },
+  {
+   "fieldname": "user_count",
+   "fieldtype": "Int",
+   "label": "User Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fp_count",
+   "fieldtype": "Int",
+   "label": "Fingerprint Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "face_count",
+   "fieldtype": "Int",
+   "label": "Face Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb_counts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "palm_count",
+   "fieldtype": "Int",
+   "label": "Palm Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_count",
+   "fieldtype": "Int",
+   "label": "Transaction Count",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_sync_info",
+   "fieldtype": "Section Break",
+   "label": "Sync Info"
+  },
+  {
+   "fieldname": "push_time",
+   "fieldtype": "Datetime",
+   "label": "Push Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sync",
+   "fieldtype": "Datetime",
+   "label": "Last Synced From BioTime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BioTime Device",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "BioTime Transaction Log",
+   "link_fieldname": "device_sn"
+  }
+ ],
+ "modified": "2026-02-11 16:00:58.666726",
+ "modified_by": "Administrator",
+ "module": "Biotime",
+ "name": "BioTime Device",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
