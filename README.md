@@ -1,6 +1,35 @@
 ### Biotime
 
-An integration of biotime 8.5 machine to ERPNext
+BioTime 8.5 attendance integration for ERPNext/HRMS. Sync devices, employees,
+and transactions, then create Employee Checkin records automatically.
+
+### Features
+
+- Two token types supported: JWT and General auth tokens
+- Full entity sync: devices, employees, departments, areas, positions
+- Transaction log sync with punch state to IN/OUT mapping
+- Automatic Employee Checkin creation in HRMS
+- Employee mapping using Employee.attendance_device_id
+- Sync audit trail with detailed logs
+- Admin tools to test connection, run full sync, or sync single entities
+- Workspace with stats, shortcuts, and charts
+
+### DocTypes
+
+- BioTime Settings (single)
+- BioTime Device
+- BioTime Employee
+- BioTime Department
+- BioTime Area
+- BioTime Position
+- BioTime Transaction Log
+- BioTime Sync Log
+
+### Workspace Widgets
+
+- Number cards: devices, mapped employees, unmapped employees, today transactions
+- Charts: checkins this month, sync activity by status
+- Shortcuts and link cards for quick navigation
 
 ### Installation
 
@@ -11,6 +40,19 @@ cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch develop
 bench install-app biotime
 ```
+
+### Setup
+
+1. Go to BioTime Settings and enter server URL, username, and password.
+2. Click Test Connection to store the token.
+3. Configure auto sync interval and which entities to sync.
+4. Run Full Sync or Sync Transactions from the settings page.
+
+### Notes
+
+- Employee mapping defaults to Employee.attendance_device_id.
+- Sync jobs create BioTime Sync Log records with counts and errors.
+- Scheduled sync runs every 5 minutes and respects the interval in settings.
 
 ### Contributing
 
