@@ -15,6 +15,25 @@ frappe.ui.form.on("BioTime Employee", {
 						}
 					});
 				});
+			} else {
+				frm.add_custom_button(__("Validate Transaction Logs"), function () {
+					frappe.call({
+						method: "biotime.biotime.doctype.biotime_employee.biotime_employee.bulk_validate_transaction_logs",
+						freeze: true,
+						freeze_message: __("Validating transaction logs for {0}...", [frm.doc.emp_code]),
+						callback: function (r) {
+							if (r.message) {
+								frappe.msgprint({
+									title: __("Validation Complete"),
+									message: __("Updated: {0} log(s), Checkins Created: {1}", [
+										r.message.total_updated, r.message.total_checkins
+									]),
+									indicator: r.message.total_updated > 0 ? "green" : "blue",
+								});
+							}
+						},
+					});
+				});
 			}
 
 			frm.add_custom_button(__("Push to BioTime"), function () {

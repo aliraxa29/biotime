@@ -35,7 +35,9 @@
   "employee_management_section",
   "block_new_registrations",
   "cb_emp_1",
-  "log_retention_days"
+  "log_retention_days",
+  "section_defaults",
+  "default_user"
  ],
  "fields": [
   {
@@ -235,6 +237,18 @@
    "fieldname": "log_retention_days",
    "fieldtype": "Int",
    "label": "Log Retention (days)"
+  },
+  {
+   "fieldname": "section_defaults",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "description": "Default user set as owner/modified_by on auto-generated records (Sync Logs, Transaction Logs, Employee Checkins). If empty, Administrator is used.",
+   "fieldname": "default_user",
+   "fieldtype": "Link",
+   "label": "Default User for Auto-Generated Records",
+   "options": "User"
   }
  ],
  "issingle": 1,

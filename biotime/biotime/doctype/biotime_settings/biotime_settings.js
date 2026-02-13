@@ -102,5 +102,36 @@ frappe.ui.form.on("BioTime Settings", {
 		frm.add_custom_button(__("View Transaction Logs"), function () {
 			frappe.set_route("List", "BioTime Transaction Log");
 		}, __("View"));
+
+		frm.add_custom_button(__("Validate Transaction Logs"), function () {
+			frappe.confirm(
+				__(
+					"This will find all transaction logs without an ERPNext Employee, look up the BioTime Employee mapping, backfill the employee, and create missing Employee Checkins. Continue?"
+				),
+				function () {
+					frappe.call({
+						method: "biotime.biotime.doctype.biotime_employee.biotime_employee.bulk_validate_transaction_logs",
+						freeze: true,
+						freeze_message: __("Validating transaction logs..."),
+						callback: function (r) {
+							if (r.message) {
+								let msg = r.message;
+								let details = __("Updated: {0} log(s)", [msg.total_updated])
+									+ "<br>" + __("Checkins Created: {0}", [msg.total_checkins]);
+								if (msg.skipped_emp_codes && msg.skipped_emp_codes.length) {
+									details += "<br><br>" + __("Skipped employee codes (no mapping): {0}",
+										[msg.skipped_emp_codes.join(", ")]);
+								}
+								frappe.msgprint({
+									title: __("Bulk Validation Complete"),
+									message: details,
+									indicator: msg.total_updated > 0 ? "green" : "blue",
+								});
+							}
+						},
+					});
+				}
+			);
+		}, __("Sync"));
 	},
 });

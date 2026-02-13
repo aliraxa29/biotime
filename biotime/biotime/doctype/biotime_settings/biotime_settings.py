@@ -21,6 +21,7 @@ class BioTimeSettings(Document):
         connection_status: DF.Data | None
         create_employee_checkin: DF.Check
         default_log_type: DF.Literal["", "IN", "OUT"]
+        default_user: DF.Link | None
         employee_id_field: DF.Literal["Attendance Device ID", "Employee ID", "Employee Name"]
         enable_auto_sync: DF.Check
         last_sync_time: DF.Datetime | None

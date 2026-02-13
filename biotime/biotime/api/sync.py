@@ -10,10 +10,36 @@ Includes: devices, employees, departments, areas, positions, and transactions.
 from datetime import timedelta
 import frappe
 from frappe.utils import now_datetime, get_datetime, cstr
+from contextlib import contextmanager
+
+
+@contextmanager
+def _as_default_user():
+	"""Context manager to run operations as the configured default user.
+	This ensures auto-generated records (sync logs, transaction logs, checkins)
+	are owned by the configured user instead of Administrator.
+	"""
+	settings = frappe.get_single("BioTime Settings")
+	default_user = settings.default_user
+	if default_user and default_user != frappe.session.user:
+		original_user = frappe.session.user
+		frappe.set_user(default_user)
+		try:
+			yield
+		finally:
+			frappe.set_user(original_user)
+	else:
+		yield
 
 
 def full_sync():
 	"""Run a full sync of all entities from BioTime"""
+	with _as_default_user():
+		_run_full_sync()
+
+
+def _run_full_sync():
+	"""Internal full sync implementation"""
 	sync_log = _create_sync_log("Full Sync")
 
 	try:
@@ -91,6 +117,12 @@ def full_sync():
 
 def sync_transactions():
 	"""Sync only transactions/punch logs from BioTime"""
+	with _as_default_user():
+		_run_sync_transactions()
+
+
+def _run_sync_transactions():
+	"""Internal transaction sync implementation"""
 	sync_log = _create_sync_log("Transactions")
 
 	try:
